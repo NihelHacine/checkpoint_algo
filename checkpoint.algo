@@ -1,0 +1,48 @@
+ALGORITHM checkpoint
+VAR
+    ch:STRING;
+    i,j,l,nb:INTEGER;
+BEGIN
+    whrite("donner une phrase qui se termine par un point")
+    read(ch);
+    l:=length(ch);
+    nb:=1;
+    j:=0;
+    FOR i FROM 1 TO l STEP step  DO
+        if ch[i]==" " then 
+        nb:=nb+1:
+        endif
+        if (ch[i]=="a") or (ch[i]=="e") or (ch[i]=="i") or (ch[i]=="o") or (ch[i]=="u") or (ch[i]=="y") then 
+        j:=j+1;
+        end_if
+    END_FOR
+    whrite("la longueur de la phrase est=",l)
+    whrite("le nombre de mots est=",nb);
+    whrite("le nombre de voyelles est=",j);
+
+END
+/*ou bien*/
+ALGORITHM checkpoint
+VAR
+    ch:STRING;
+    i,j,l,nb:INTEGER;
+BEGIN
+    whrite("donner une phrase qui se termine par un point")
+    read(ch);
+    l:=1;
+    nb:=1;
+    j:=0;
+    REPEAT
+        if ch[l]==" " then 
+        nb:=nb+1;
+        endif
+        if (ch[i]=="a") or (ch[i]=="e") or (ch[i]=="i") or (ch[i]=="o") or (ch[i]=="u") or (ch[i]=="y") then 
+        j:=j+1;
+        end_if 
+        l:=l+1;   
+        UNTIL (ch[l]==".")
+    whrite("la longueur de la phrase est=",l)
+    whrite("le nombre de mots est=",nb);
+    whrite("le nombre de voyelles est=",j);
+
+END
